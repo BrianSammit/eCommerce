@@ -4,18 +4,18 @@ import com.brian.eCommerce.generic.ValueObject;
 
 import java.util.Objects;
 
-public class InStock implements ValueObject<Boolean> {
+public class ProductImage implements ValueObject<String> {
 
-    private final Boolean value;
+    private final String value;
 
-    public InStock(Boolean value) {
+    public ProductImage(String value) {
         this.value = Objects.requireNonNull(value);
-        if(this.value == null){
+        if(this.value.isEmpty()){
             throw new IllegalArgumentException("The stock value is not valid");
         }
     }
     @Override
-    public Boolean value() {
+    public String value() {
         return value;
     }
 }
