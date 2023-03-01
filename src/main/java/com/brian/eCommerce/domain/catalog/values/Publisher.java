@@ -1,17 +1,16 @@
-package com.brian.eCommerce.domain.values;
+package com.brian.eCommerce.domain.catalog.values;
 
 import com.brian.eCommerce.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Description implements ValueObject<String> {
-
+public class Publisher implements ValueObject<String> {
     private final String value;
 
-    public Description(String value) {
+    public Publisher(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isEmpty()){
-            throw new IllegalArgumentException("The description is not valid");
+            throw new IllegalArgumentException("The publisher is not valid");
         }
     }
     @Override

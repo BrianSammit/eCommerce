@@ -1,18 +1,17 @@
-package com.brian.eCommerce.domain.values;
+package com.brian.eCommerce.domain.catalog.values;
 
 import com.brian.eCommerce.generic.ValueObject;
 
-import java.util.Date;
 import java.util.Objects;
 
-public class ShippingType implements ValueObject<String> {
+public class ProductImage implements ValueObject<String> {
 
     private final String value;
 
-    public ShippingType(String value) {
+    public ProductImage(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isEmpty()){
-            throw new IllegalArgumentException("The shipping type is not valid");
+            throw new IllegalArgumentException("The image is not valid");
         }
     }
     @Override

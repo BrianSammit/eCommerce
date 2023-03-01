@@ -1,6 +1,7 @@
-package com.brian.eCommerce.domain;
+package com.brian.eCommerce.domain.catalog;
 
-import com.brian.eCommerce.domain.values.ProductID;
+import com.brian.eCommerce.domain.catalog.Category;
+import com.brian.eCommerce.domain.catalog.values.ProductID;
 import com.brian.eCommerce.generic.Entity;
 
 import java.util.List;

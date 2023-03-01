@@ -1,4 +1,4 @@
-package com.brian.eCommerce.domain.command;
+package com.brian.eCommerce.domain.catalog.command;
 
 import com.brian.eCommerce.generic.Command;
 

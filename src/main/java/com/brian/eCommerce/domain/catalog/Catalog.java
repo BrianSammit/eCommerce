@@ -1,6 +1,6 @@
-package com.brian.eCommerce.domain;
+package com.brian.eCommerce.domain.catalog;
 
-import com.brian.eCommerce.domain.values.CatalogID;
+import com.brian.eCommerce.domain.catalog.values.CatalogID;
 import com.brian.eCommerce.generic.AggregateRoot;
 
 public class Catalog extends AggregateRoot<CatalogID> {

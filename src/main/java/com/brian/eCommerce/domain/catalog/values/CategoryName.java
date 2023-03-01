@@ -1,21 +1,21 @@
-package com.brian.eCommerce.domain.values;
+package com.brian.eCommerce.domain.catalog.values;
 
 import com.brian.eCommerce.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Location implements ValueObject<String> {
+public class CategoryName implements ValueObject<String> {
+
     private final String value;
 
-    public Location(String value) {
+    public CategoryName(String value) {
         this.value = Objects.requireNonNull(value);
         if (this.value.isEmpty()) {
-            throw new IllegalArgumentException("The location is not valid");
+            throw new IllegalArgumentException("The category name is not valid");
         }
     }
-
     @Override
     public String value() {
-        return value;
+        return null;
     }
 }

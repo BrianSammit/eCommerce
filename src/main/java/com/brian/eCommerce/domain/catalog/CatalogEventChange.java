@@ -1,4 +1,4 @@
-package com.brian.eCommerce.domain;
+package com.brian.eCommerce.domain.catalog;
 
 import com.brian.eCommerce.generic.EventChange;
 
