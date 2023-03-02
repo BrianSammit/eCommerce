@@ -16,6 +16,6 @@ public class Status implements ValueObject<Boolean> {
     }
     @Override
     public Boolean value() {
-        return false;
+        return value;
     }
 }
