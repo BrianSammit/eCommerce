@@ -1,6 +1,7 @@
 package com.brian.eCommerce.domain.orders;
 
 import com.brian.eCommerce.domain.orders.events.OrderCreated;
+import com.brian.eCommerce.domain.orders.events.ProductAdded;
 import com.brian.eCommerce.domain.values.*;
 import com.brian.eCommerce.generic.EventChange;
 
@@ -13,6 +14,11 @@ public class OrderEventChange extends EventChange {
             order.status = new Status(event.getStatus());
             order.costumerID = CostumerID.of(event.getCostumerID());
             order.shippingAddress = new ShippingAddress(event.getShippingAddress());
+        });
+
+        apply((ProductAdded event) -> {
+            Product product = new Product(event.getProductID(), event.getName(), event.getPrice(), event.getDescription(),
+                    event.getLocation(), event.getQuantity());
         });
     }
 }
