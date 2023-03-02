@@ -10,7 +10,7 @@ public class PersonalDetailsAdded extends DomainEvent {
     private Age age;
     private Occupation occupation;
 
-    public PersonalDetailsAdded(String type, PersonalDetailsID personalDetailsID,
+    public PersonalDetailsAdded(PersonalDetailsID personalDetailsID,
                                 Name name, LastName lastName, Age age, Occupation occupation) {
         super("eCommerce.personalDetailsAdded");
         this.personalDetailsID = personalDetailsID;

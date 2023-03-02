@@ -12,10 +12,10 @@ public class ContactDetailsAdded extends DomainEvent {
     private Email email;
     private PhoneNum phoneNum;
 
-    public ContactDetailsAdded(String type, ContactDetailsID contactDetailsID,
+    public ContactDetailsAdded(ContactDetailsID contactDetailsID,
                                Country country, City city, Address address,
                                AddressDetails addressDetails, Email email, PhoneNum phoneNum) {
-        super(type);
+        super("eCommerce.contactDetailsAdded");
         this.contactDetailsID = contactDetailsID;
         this.country = country;
         this.city = city;
