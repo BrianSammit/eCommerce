@@ -6,10 +6,12 @@ import com.brian.eCommerce.domain.orders.Order;
 import com.brian.eCommerce.domain.orders.command.CreateOrderCommand;
 import com.brian.eCommerce.domain.values.*;
 import com.brian.eCommerce.generic.DomainEvent;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class CreateOrderUseCase implements UseCaseForCommand<CreateOrderCommand> {
 
     private final EventRepository eventRepository;
