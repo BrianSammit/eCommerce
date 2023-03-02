@@ -1,4 +1,4 @@
-package com.brian.eCommerce.domain.catalog.values;
+package com.brian.eCommerce.domain.values;
 
 import com.brian.eCommerce.generic.Identity;
 
