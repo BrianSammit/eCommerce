@@ -2,20 +2,21 @@ package com.brian.eCommerce.domain.values;
 
 import com.brian.eCommerce.generic.ValueObject;
 
+import java.util.Date;
 import java.util.Objects;
 
-public class OrderDate implements ValueObject<OrderDate> {
+public class OrderDate implements ValueObject<Date> {
 
-    private final OrderDate value;
+    private final Date value;
 
-    public OrderDate(OrderDate value) {
+    public OrderDate(Date value) {
         this.value = Objects.requireNonNull(value);
         if(this.value == null){
             throw new IllegalArgumentException("The Date is not valid");
         }
     }
     @Override
-    public OrderDate value() {
+    public Date value() {
         return value;
     }
 }
