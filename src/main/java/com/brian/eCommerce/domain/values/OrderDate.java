@@ -4,18 +4,18 @@ import com.brian.eCommerce.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Date implements ValueObject<Date> {
+public class OrderDate implements ValueObject<OrderDate> {
 
-    private final Date value;
+    private final OrderDate value;
 
-    public Date(Date value) {
+    public OrderDate(OrderDate value) {
         this.value = Objects.requireNonNull(value);
         if(this.value == null){
             throw new IllegalArgumentException("The Date is not valid");
         }
     }
     @Override
-    public Date value() {
+    public OrderDate value() {
         return value;
     }
 }
