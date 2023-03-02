@@ -12,6 +12,8 @@ import java.util.Objects;
 
 public class User extends AggregateRoot<UserID> {
 
+    protected PersonalDetails personalDetails;
+    protected  ContactDetails contactDetails;
     protected UserName userName;
     protected Password password;
 
