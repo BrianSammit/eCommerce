@@ -12,7 +12,8 @@ public class ProductAdded extends DomainEvent {
     protected Location location;
     protected Quantity quantity;
 
-    public ProductAdded(String type, ProductID productID, Name name, Price price, Description description, Location location, Quantity quantity) {
+    public ProductAdded(ProductID productID, Name name, Price price, Description description,
+                        Location location, Quantity quantity) {
         super("eCommerce.productAdded");
         this.productID = productID;
         this.name = name;
