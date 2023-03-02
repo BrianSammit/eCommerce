@@ -14,11 +14,12 @@ public class Product extends AggregateRoot<ProductID> {
     protected Description description;
     protected Publisher publisher;
     protected Location location;
-    public Product(ProductID id, String name, Float price, Boolean inStock, String description,
-                   String publisher, String location) {
+    public Product(ProductID id, Name name, Price price, InStock inStock, Description description,
+                   Publisher publisher, Location location) {
         super(id);
         subscribe(new ProductEventChange(this));
-        appendChange(new ProductCreated(name, price, inStock, description, publisher, location));
+        appendChange(new ProductCreated(name.value(), price.value(), inStock.value(), description.value(),
+                publisher.value(), location.value()));
     }
 
     public Product(ProductID id) {
