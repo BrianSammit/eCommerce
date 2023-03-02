@@ -18,20 +18,19 @@ public class PersonalDetails extends Entity<PersonalDetailsID> {
         this.occupation = occupation;
     }
 
-    public void setName(Name name) {
-        this.name = name;
+    public Name getName() {
+        return name;
     }
 
-    public void setLastName(LastName lastName) {
-        this.lastName = lastName;
+    public LastName getLastName() {
+        return lastName;
     }
 
-    public void setAge(Age age) {
-        this.age = age;
+    public Age getAge() {
+        return age;
     }
 
-    public void setOccupation(Occupation occupation) {
-        this.occupation = occupation;
+    public Occupation getOccupation() {
+        return occupation;
     }
-
 }
