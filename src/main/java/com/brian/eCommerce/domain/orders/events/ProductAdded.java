@@ -10,7 +10,6 @@ public class ProductAdded extends DomainEvent {
     protected Price price;
     protected Description description;
     protected Location location;
-
     protected Quantity quantity;
 
     public ProductAdded(String type, ProductID productID, Name name, Price price, Description description, Location location, Quantity quantity) {
