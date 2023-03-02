@@ -4,58 +4,77 @@ import com.brian.eCommerce.domain.values.*;
 import com.brian.eCommerce.generic.Command;
 
 public class AddProductCommand extends Command {
-    protected ProductID productID;
-    protected Name name;
-    protected Price price;
-    protected Description description;
-    protected Location location;
-    protected Quantity quantity;
+    protected String productID;
+    protected String orderID;
+    protected String name;
+    protected Float price;
+    protected String description;
+    protected String location;
+    protected Integer quantity;
 
-    public ProductID getProductID() {
+    public AddProductCommand(String productID, String orderID, String name, Float price, String description, String location, Integer quantity) {
+        this.productID = productID;
+        this.orderID = orderID;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.location = location;
+        this.quantity = quantity;
+    }
+
+    public String getProductID() {
         return productID;
     }
 
-    public void setProductID(ProductID productID) {
+    public void setProductID(String productID) {
         this.productID = productID;
     }
 
-    public Name getName() {
+    public String getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
+    }
+
+    public String getName() {
         return name;
     }
 
-    public void setName(Name name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public Price getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public void setPrice(Price price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
 
-    public Description getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(Description description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public Location getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
-    public Quantity getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Quantity quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 }
