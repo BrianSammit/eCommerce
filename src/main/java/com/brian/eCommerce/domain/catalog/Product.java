@@ -10,16 +10,12 @@ import java.util.List;
 public class Product extends AggregateRoot<ProductID> {
     protected Name name;
     protected Price price;
-    protected InStock inStock;
     protected Description description;
-    protected Publisher publisher;
     protected Location location;
-    public Product(ProductID id, Name name, Price price, InStock inStock, Description description,
-                   Publisher publisher, Location location) {
+    public Product(ProductID id, Name name, Price price,  Description description, Location location) {
         super(id);
         subscribe(new ProductEventChange(this));
-        appendChange(new ProductCreated(name.value(), price.value(), inStock.value(), description.value(),
-                publisher.value(), location.value()));
+        appendChange(new ProductCreated(name.value(), price.value(), description.value(), location.value()));
     }
 
     public Product(ProductID id) {

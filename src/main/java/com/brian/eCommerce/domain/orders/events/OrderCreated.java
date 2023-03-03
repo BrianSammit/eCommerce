@@ -1,40 +1,58 @@
 package com.brian.eCommerce.domain.orders.events;
 
-import com.brian.eCommerce.domain.values.CostumerID;
-import com.brian.eCommerce.domain.values.OrderDate;
-import com.brian.eCommerce.domain.values.ShippingAddress;
-import com.brian.eCommerce.domain.values.Status;
+import com.brian.eCommerce.domain.values.ProductID;
+import com.brian.eCommerce.domain.values.Quantity;
 import com.brian.eCommerce.generic.DomainEvent;
 
 import java.util.Date;
 
 public class OrderCreated extends DomainEvent {
     protected Date date;
-    protected Boolean status;
-    protected String costumerID;
+    protected String status;
     protected String shippingAddress;
 
-    public OrderCreated(Date date, Boolean status, String costumerID, String shippingAddress) {
+    protected String userID;
+
+    protected String productID;
+    protected Integer quantity;
+
+    public OrderCreated(String type) {
+        super("eCommerce.orderCreated");
+    }
+
+    public OrderCreated(Date date, String status, String shippingAddress,
+                        String userID, String productID, Integer quantity) {
         super("eCommerce.orderCreated");
         this.date = date;
         this.status = status;
-        this.costumerID = costumerID;
         this.shippingAddress = shippingAddress;
+        this.userID = userID;
+        this.productID = productID;
+        this.quantity = quantity;
     }
 
     public Date getDate() {
         return date;
     }
 
-    public Boolean getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public String getCostumerID() {
-        return costumerID;
-    }
 
     public String getShippingAddress() {
         return shippingAddress;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public String getProductID() {
+        return productID;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
     }
 }

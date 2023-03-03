@@ -10,17 +10,15 @@ public class ProductAdded extends DomainEvent {
     protected Price price;
     protected Description description;
     protected Location location;
-    protected Quantity quantity;
 
     public ProductAdded(ProductID productID, Name name, Price price, Description description,
-                        Location location, Quantity quantity) {
+                        Location location) {
         super("eCommerce.productAdded");
         this.productID = productID;
         this.name = name;
         this.price = price;
         this.description = description;
         this.location = location;
-        this.quantity = quantity;
     }
 
     public ProductID getProductID() {
@@ -41,9 +39,5 @@ public class ProductAdded extends DomainEvent {
 
     public Location getLocation() {
         return location;
-    }
-
-    public Quantity getQuantity() {
-        return quantity;
     }
 }

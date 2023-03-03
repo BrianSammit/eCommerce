@@ -23,7 +23,7 @@ public class CreateOrderUseCase implements UseCaseForCommand<CreateOrderCommand>
     @Override
     public List<DomainEvent> apply(CreateOrderCommand command) {
         Order order = new Order(OrderID.of(command.getOrderID()), new OrderDate(command.getDate()),
-                new Status(command.getStatus()), CostumerID.of(command.getOrderID()),
+                new Status(command.getStatus()), UserId.of(command.getOrderID()),
                 new ShippingAddress(command.getShippingAddress()));
         return order.getUncommittedChanges().stream().map(eventRepository::saveEvent).collect(Collectors.toList());
     }
