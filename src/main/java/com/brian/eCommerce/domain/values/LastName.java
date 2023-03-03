@@ -10,7 +10,7 @@ public class LastName implements ValueObject<String> {
     public LastName(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isEmpty()){
-            throw new IllegalArgumentException("The lastname is not valid");
+            throw new IllegalArgumentException();
         }
     }
     @Override

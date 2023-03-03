@@ -10,7 +10,7 @@ public class Publisher implements ValueObject<String> {
     public Publisher(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isEmpty()){
-            throw new IllegalArgumentException("The publisher is not valid");
+            throw new IllegalArgumentException();
         }
     }
     @Override

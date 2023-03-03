@@ -9,8 +9,8 @@ public class PhoneNum implements ValueObject<Integer> {
 
     public PhoneNum(Integer value) {
         this.value = Objects.requireNonNull(value);
-        if(this.value == null){
-            throw new IllegalArgumentException("The description is not valid");
+        if(this.value < 0){
+            throw new IllegalArgumentException();
         }
     }
     @Override

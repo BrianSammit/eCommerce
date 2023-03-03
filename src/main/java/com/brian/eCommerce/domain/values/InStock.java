@@ -10,9 +10,6 @@ public class InStock implements ValueObject<Boolean> {
 
     public InStock(Boolean value) {
         this.value = Objects.requireNonNull(value);
-        if(this.value == null){
-            throw new IllegalArgumentException("The stock value is not valid");
-        }
     }
     @Override
     public Boolean value() {

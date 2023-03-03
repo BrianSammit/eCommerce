@@ -10,7 +10,7 @@ public class City implements ValueObject<String> {
     public City(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isEmpty()){
-            throw new IllegalArgumentException("The description is not valid");
+            throw new IllegalArgumentException();
         }
     }
     @Override

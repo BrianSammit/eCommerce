@@ -10,8 +10,8 @@ public class Age implements ValueObject<Integer> {
 
     public Age(Integer value) {
         this.value = Objects.requireNonNull(value);
-        if(this.value == null){
-            throw new IllegalArgumentException("The age is not valid");
+        if(this.value < 0){
+            throw new IllegalArgumentException();
         }
     }
     @Override

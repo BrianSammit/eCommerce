@@ -27,7 +27,7 @@ public class Product extends AggregateRoot<ProductID> {
         subscribe(new ProductEventChange(this));
     }
 
-    public static Product myProduct(ProductID id, List<DomainEvent> events){
+    public static Product from(ProductID id, List<DomainEvent> events){
         Product product = new Product(id);
         events.forEach(product::applyEvent);
         return product;

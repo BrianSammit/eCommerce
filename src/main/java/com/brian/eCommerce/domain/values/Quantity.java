@@ -9,8 +9,8 @@ public class Quantity implements ValueObject<Integer> {
 
     public Quantity(Integer value) {
         this.value = Objects.requireNonNull(value);
-        if(this.value == null){
-            throw new IllegalArgumentException("The Quantity is not valid");
+        if(this.value < 0){
+            throw new IllegalArgumentException();
         }
     }
     @Override

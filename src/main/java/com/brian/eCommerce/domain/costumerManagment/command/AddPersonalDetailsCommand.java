@@ -8,15 +8,16 @@ import com.brian.eCommerce.generic.Command;
 
 public class AddPersonalDetailsCommand extends Command {
 
-    protected String personalDetalisID;
+    protected String personalDetailsID;
     protected String userID;
     protected Name name;
     protected LastName lastName;
     protected Age age;
     protected Occupation occupation;
 
-    public AddPersonalDetailsCommand(String personalDetalisID, String userID, Name name, LastName lastName, Age age, Occupation occupation) {
-        this.personalDetalisID = personalDetalisID;
+    public AddPersonalDetailsCommand(String personalDetailsID, String userID, Name name, LastName lastName,
+                                     Age age, Occupation occupation) {
+        this.personalDetailsID = personalDetailsID;
         this.userID = userID;
         this.name = name;
         this.lastName = lastName;
@@ -24,12 +25,12 @@ public class AddPersonalDetailsCommand extends Command {
         this.occupation = occupation;
     }
 
-    public String getPersonalDetalisID() {
-        return personalDetalisID;
+    public String getPersonalDetailsID() {
+        return personalDetailsID;
     }
 
-    public void setPersonalDetalisID(String personalDetalisID) {
-        this.personalDetalisID = personalDetalisID;
+    public void setPersonalDetailsID(String personalDetailsID) {
+        this.personalDetailsID = personalDetailsID;
     }
 
     public String getUserID() {

@@ -10,8 +10,8 @@ public class Price implements ValueObject<Float> {
 
     public Price(Float value) {
         this.value = Objects.requireNonNull(value);
-        if(this.value == null){
-            throw new IllegalArgumentException("The price is not valid");
+        if(this.value < 0){
+            throw new IllegalArgumentException();
         }
     }
     @Override

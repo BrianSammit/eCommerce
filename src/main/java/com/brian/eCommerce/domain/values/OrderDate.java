@@ -11,9 +11,6 @@ public class OrderDate implements ValueObject<Date> {
 
     public OrderDate(Date value) {
         this.value = Objects.requireNonNull(value);
-        if(this.value == null){
-            throw new IllegalArgumentException("The Date is not valid");
-        }
     }
     @Override
     public Date value() {

@@ -10,7 +10,7 @@ public class Country implements ValueObject<String> {
     public Country(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isEmpty()){
-            throw new IllegalArgumentException("The description is not valid");
+            throw new IllegalArgumentException();
         }
     }
     @Override

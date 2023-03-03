@@ -10,9 +10,6 @@ public class Status implements ValueObject<Boolean> {
 
     public Status(Boolean value) {
         this.value = Objects.requireNonNull(value);
-        if(this.value == null){
-            throw new IllegalArgumentException("The status is not valid");
-        }
     }
     @Override
     public Boolean value() {

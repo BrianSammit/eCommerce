@@ -10,7 +10,7 @@ public class Occupation implements ValueObject<String> {
     public Occupation(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isEmpty()){
-            throw new IllegalArgumentException("The lastname is not valid");
+            throw new IllegalArgumentException();
         }
     }
     @Override

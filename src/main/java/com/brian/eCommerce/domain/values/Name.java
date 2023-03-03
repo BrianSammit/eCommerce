@@ -10,7 +10,7 @@ public class Name implements ValueObject<String> {
     public Name(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isEmpty()){
-            throw new IllegalArgumentException("The product name is not valid");
+            throw new IllegalArgumentException();
         }
     }
     @Override

@@ -11,7 +11,7 @@ public class AddressDetails implements ValueObject<String> {
     public AddressDetails(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isEmpty()){
-            throw new IllegalArgumentException("The description is not valid");
+            throw new IllegalArgumentException();
         }
     }
     @Override

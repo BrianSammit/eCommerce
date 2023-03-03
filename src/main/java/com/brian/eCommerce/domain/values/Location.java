@@ -10,7 +10,7 @@ public class Location implements ValueObject<String> {
     public Location(String value) {
         this.value = Objects.requireNonNull(value);
         if (this.value.isEmpty()) {
-            throw new IllegalArgumentException("The location is not valid");
+            throw new IllegalArgumentException();
         }
     }
 
