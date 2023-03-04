@@ -6,16 +6,16 @@ import com.brian.eCommerce.generic.Command;
 public class AddContactDetailsCommand extends Command {
     protected String contactDetailsID;
     protected String userID;
-    protected Country country;
-    protected City city;
-    protected Address address;
-    protected AddressDetails addressDetails;
-    protected Email email;
-    protected PhoneNum phoneNum;
+    protected String country;
+    protected String city;
+    protected String address;
+    protected String addressDetails;
+    protected String email;
+    protected Integer phoneNum;
 
     public AddContactDetailsCommand(String contactDetailsID, String userID,
-                                    Country country, City city, Address address,
-                                    AddressDetails addressDetails, Email email, PhoneNum phoneNum) {
+                                    String country, String city, String address,
+                                    String addressDetails, String email, Integer phoneNum) {
         this.contactDetailsID = contactDetailsID;
         this.userID = userID;
         this.country = country;
@@ -42,51 +42,51 @@ public class AddContactDetailsCommand extends Command {
         this.userID = userID;
     }
 
-    public Country getCountry() {
+    public String getCountry() {
         return country;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 
-    public City getCity() {
+    public String getCity() {
         return city;
     }
 
-    public void setCity(City city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public AddressDetails getAddressDetails() {
+    public String getAddressDetails() {
         return addressDetails;
     }
 
-    public void setAddressDetails(AddressDetails addressDetails) {
+    public void setAddressDetails(String addressDetails) {
         this.addressDetails = addressDetails;
     }
 
-    public Email getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(Email email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public PhoneNum getPhoneNum() {
+    public Integer getPhoneNum() {
         return phoneNum;
     }
 
-    public void setPhoneNum(PhoneNum phoneNum) {
+    public void setPhoneNum(Integer phoneNum) {
         this.phoneNum = phoneNum;
     }
 }

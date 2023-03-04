@@ -11,17 +11,17 @@ import java.util.List;
 import java.util.Objects;
 
 public class Order extends AggregateRoot<OrderID> {
-    protected OrderDate date;
+//    protected OrderDate date;
     protected Status status;
     protected ShippingAddress shippingAddress;
     protected UserId userID;
     protected List<Product> products;
 
-    public Order(OrderID id, OrderDate date, Status status, ShippingAddress shippingAddress, UserId userID,
+    public Order(OrderID id,  Status status, ShippingAddress shippingAddress, UserId userID,
                  ProductID productID, Quantity quantity) {
         super(id);
         subscribe(new OrderEventChange(this));
-        appendChange(new OrderCreated(date.value(), status.value(), shippingAddress.value(), userID.value(),
+        appendChange(new OrderCreated( status.value(), shippingAddress.value(), userID.value(),
                 productID.value(), quantity.value())).apply();
     }
 
@@ -43,6 +43,6 @@ public class Order extends AggregateRoot<OrderID> {
         Objects.requireNonNull(price);
         Objects.requireNonNull(description);
         Objects.requireNonNull(location);
-        appendChange(new ProductAdded(id, name, price, description, location));
+        appendChange(new ProductAdded(id, name, price, description, location)).apply();
     }
 }

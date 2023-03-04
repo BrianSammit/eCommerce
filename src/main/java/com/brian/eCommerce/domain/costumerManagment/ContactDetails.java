@@ -5,12 +5,12 @@ import com.brian.eCommerce.generic.Entity;
 
 public class ContactDetails extends Entity<ContactDetailsID> {
 
-    private Country country;
-    private City city;
-    private Address address;
-    private AddressDetails addressDetails;
-    private Email email;
-    private PhoneNum phoneNum;
+    protected Country country;
+    protected City city;
+    protected Address address;
+    protected AddressDetails addressDetails;
+    protected Email email;
+    protected PhoneNum phoneNum;
 
     public ContactDetails(ContactDetailsID id, Country country, City city,
                           Address address, AddressDetails addressDetails,

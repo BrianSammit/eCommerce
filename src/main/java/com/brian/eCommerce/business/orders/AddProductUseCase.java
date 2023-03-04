@@ -21,9 +21,11 @@ public class AddProductUseCase implements UseCaseForCommand<AddProductCommand> {
     public List<DomainEvent> apply(AddProductCommand command) {
         List<DomainEvent> orderEvent = eventRepository.findByAggregatedRootId(command.getProductID());
         Order order = Order.from(OrderID.of(command.getOrderID()), orderEvent);
-        order.addProduct(ProductID.of(command.getProductID()), new Name(command.getName()), new Price(command.getPrice()),
-                new Description(command.getDescription()), new Location(command.getLocation()),
-                new Quantity(command.getQuantity()));
+        order.addProduct(ProductID.of(command.getProductID()),
+                new Name(command.getName()),
+                new Price(command.getPrice()),
+                new Description(command.getDescription()),
+                new Location(command.getLocation()));
         return order.getUncommittedChanges().stream().map(eventRepository::saveEvent).collect(Collectors.toList());
     }
 }

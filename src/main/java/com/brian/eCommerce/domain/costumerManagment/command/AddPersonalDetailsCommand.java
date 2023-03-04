@@ -10,13 +10,13 @@ public class AddPersonalDetailsCommand extends Command {
 
     protected String personalDetailsID;
     protected String userID;
-    protected Name name;
-    protected LastName lastName;
-    protected Age age;
-    protected Occupation occupation;
+    protected String name;
+    protected String lastName;
+    protected Integer age;
+    protected String occupation;
 
-    public AddPersonalDetailsCommand(String personalDetailsID, String userID, Name name, LastName lastName,
-                                     Age age, Occupation occupation) {
+    public AddPersonalDetailsCommand(String personalDetailsID, String userID, String name, String lastName,
+                                     Integer age, String occupation) {
         this.personalDetailsID = personalDetailsID;
         this.userID = userID;
         this.name = name;
@@ -41,35 +41,35 @@ public class AddPersonalDetailsCommand extends Command {
         this.userID = userID;
     }
 
-    public Name getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(Name name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public LastName getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(LastName lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public Age getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(Age age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
-    public Occupation getOccupation() {
+    public String getOccupation() {
         return occupation;
     }
 
-    public void setOccupation(Occupation occupation) {
+    public void setOccupation(String occupation) {
         this.occupation = occupation;
     }
 }

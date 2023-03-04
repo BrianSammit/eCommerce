@@ -4,13 +4,13 @@ import com.brian.eCommerce.domain.values.*;
 import com.brian.eCommerce.generic.DomainEvent;
 
 public class ContactDetailsAdded extends DomainEvent {
-    private ContactDetailsID contactDetailsID;
-    private Country country;
-    private City city;
-    private Address address;
-    private AddressDetails addressDetails;
-    private Email email;
-    private PhoneNum phoneNum;
+    protected ContactDetailsID contactDetailsID;
+    protected Country country;
+    protected City city;
+    protected Address address;
+    protected AddressDetails addressDetails;
+    protected Email email;
+    protected PhoneNum phoneNum;
 
     public ContactDetailsAdded(ContactDetailsID contactDetailsID,
                                Country country, City city, Address address,

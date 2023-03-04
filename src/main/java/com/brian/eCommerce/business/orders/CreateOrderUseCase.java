@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Component
 public class CreateOrderUseCase implements UseCaseForCommand<CreateOrderCommand> {
 
-    private final EventRepository eventRepository;
+    private EventRepository eventRepository;
 
     public CreateOrderUseCase(EventRepository eventRepository) {
         this.eventRepository = eventRepository;
@@ -22,9 +22,12 @@ public class CreateOrderUseCase implements UseCaseForCommand<CreateOrderCommand>
 
     @Override
     public List<DomainEvent> apply(CreateOrderCommand command) {
-        Order order = new Order(OrderID.of(command.getOrderID()), new OrderDate(command.getDate()),
-                new Status(command.getStatus()), UserId.of(command.getOrderID()),
-                new ShippingAddress(command.getShippingAddress()));
+        Order order = new Order(OrderID.of(command.getOrderID()),
+                new Status(command.getStatus()),
+                new ShippingAddress(command.getShippingAddress()),
+                UserId.of(command.getUserID()),
+                new ProductID(),
+                new Quantity(2));
         return order.getUncommittedChanges().stream().map(eventRepository::saveEvent).collect(Collectors.toList());
     }
 }

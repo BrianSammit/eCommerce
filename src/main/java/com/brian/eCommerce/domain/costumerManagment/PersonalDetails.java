@@ -5,10 +5,10 @@ import com.brian.eCommerce.generic.Entity;
 
 public class PersonalDetails extends Entity<PersonalDetailsID> {
 
-    private Name name;
-    private LastName lastName;
-    private Age age;
-    private Occupation occupation;
+    protected Name name;
+    protected LastName lastName;
+    protected Age age;
+    protected Occupation occupation;
 
     public PersonalDetails(PersonalDetailsID id, Name name, LastName lastName, Age age, Occupation occupation) {
         super(id);

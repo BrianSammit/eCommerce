@@ -15,7 +15,7 @@ public class Product extends AggregateRoot<ProductID> {
     public Product(ProductID id, Name name, Price price,  Description description, Location location) {
         super(id);
         subscribe(new ProductEventChange(this));
-        appendChange(new ProductCreated(name.value(), price.value(), description.value(), location.value()));
+        appendChange(new ProductCreated(name.value(), price.value(), description.value(), location.value())).apply();
     }
 
     public Product(ProductID id) {

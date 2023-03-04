@@ -23,9 +23,14 @@ public class AddContactDetailsUseCase implements UseCaseForCommand<AddContactDet
     public List<DomainEvent> apply(AddContactDetailsCommand command) {
         List<DomainEvent> userEvent = eventRepository.findByAggregatedRootId(command.getUserID());
         User user = User.from(UserID.of(command.getUserID()), userEvent);
-        user.addContactDetails(ContactDetailsID.of(command.getContactDetailsID()), new Country(command.getCountry()),
-                new City(command.getCity()), new Address(command.getAddress()), new AddressDetails(command.getAddressDetails()),
-                new Email(command.getEmail()), new PhoneNum(command.getPhoneNum()));
+        user.addContactDetails(
+                ContactDetailsID.of(command.getContactDetailsID()),
+                new Country(command.getCountry()),
+                new City(command.getCity()),
+                new Address(command.getAddress()),
+                new AddressDetails(command.getAddressDetails()),
+                new Email(command.getEmail()),
+                new PhoneNum(command.getPhoneNum()));
         return user.getUncommittedChanges().stream().map(eventRepository::saveEvent).collect(Collectors.toList());
     }
 }

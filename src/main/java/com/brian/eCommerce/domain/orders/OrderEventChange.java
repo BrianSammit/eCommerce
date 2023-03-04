@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class OrderEventChange extends EventChange {
     public OrderEventChange(Order order){
         apply((OrderCreated event) -> {
-            order.date = new OrderDate(event.getDate());
             order.status = new Status(event.getStatus());
             order.shippingAddress = new ShippingAddress(event.getShippingAddress());
             order.userID = UserId.of(event.getUserID());

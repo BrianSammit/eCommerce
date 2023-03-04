@@ -3,8 +3,8 @@ package com.brian.eCommerce.domain.costumerManagment.events;
 import com.brian.eCommerce.generic.DomainEvent;
 
 public class UserCreated extends DomainEvent {
-    private String userName;
-    private String password;
+    protected String userName;
+    protected String password;
 
     public UserCreated(String userName, String password) {
         super("eCommerce.userCreated");

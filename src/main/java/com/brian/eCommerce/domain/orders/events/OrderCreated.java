@@ -7,7 +7,6 @@ import com.brian.eCommerce.generic.DomainEvent;
 import java.util.Date;
 
 public class OrderCreated extends DomainEvent {
-    protected Date date;
     protected String status;
     protected String shippingAddress;
 
@@ -20,19 +19,14 @@ public class OrderCreated extends DomainEvent {
         super("eCommerce.orderCreated");
     }
 
-    public OrderCreated(Date date, String status, String shippingAddress,
+    public OrderCreated( String status, String shippingAddress,
                         String userID, String productID, Integer quantity) {
         super("eCommerce.orderCreated");
-        this.date = date;
         this.status = status;
         this.shippingAddress = shippingAddress;
         this.userID = userID;
         this.productID = productID;
         this.quantity = quantity;
-    }
-
-    public Date getDate() {
-        return date;
     }
 
     public String getStatus() {

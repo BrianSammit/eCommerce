@@ -4,11 +4,11 @@ import com.brian.eCommerce.domain.values.*;
 import com.brian.eCommerce.generic.DomainEvent;
 
 public class PersonalDetailsAdded extends DomainEvent {
-    private PersonalDetailsID personalDetailsID;
-    private Name name;
-    private LastName lastName;
-    private Age age;
-    private Occupation occupation;
+    protected PersonalDetailsID personalDetailsID;
+    protected Name name;
+    protected LastName lastName;
+    protected Age age;
+    protected Occupation occupation;
 
     public PersonalDetailsAdded(PersonalDetailsID personalDetailsID,
                                 Name name, LastName lastName, Age age, Occupation occupation) {

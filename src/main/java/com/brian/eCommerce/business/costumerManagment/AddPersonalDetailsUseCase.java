@@ -23,8 +23,12 @@ public class AddPersonalDetailsUseCase implements UseCaseForCommand<AddPersonalD
     public List<DomainEvent> apply(AddPersonalDetailsCommand command) {
         List<DomainEvent> userEvent = eventRepository.findByAggregatedRootId(command.getUserID());
         User user = User.from(UserID.of(command.getUserID()), userEvent);
-        user.addPersonalDetails(PersonalDetailsID.of(command.getPersonalDetailsID()), new Name(command.getName()),
-                new LastName(command.getLastName()), new Age(command.getAge()), new Occupation(command.getOccupation()));
+        user.addPersonalDetails(
+                PersonalDetailsID.of(command.getPersonalDetailsID()),
+                new Name(command.getName()),
+                new LastName(command.getLastName()),
+                new Age(command.getAge()),
+                new Occupation(command.getOccupation()));
         return user.getUncommittedChanges().stream().map(eventRepository::saveEvent).collect(Collectors.toList());
     }
 }

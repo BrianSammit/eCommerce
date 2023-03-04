@@ -22,9 +22,12 @@ public class CreateProductUseCase implements UseCaseForCommand<CreateProductComm
 
     @Override
     public List<DomainEvent> apply(CreateProductCommand command) {
-        Product product = new Product(ProductID.of(command.getProductID()),new Name(command.getName()),
-                new Price(command.getPrice()), new InStock(command.getInStock()), new Description(command.getDescription()),
-                new Publisher(command.getPublisher()), new Location(command.getLocation()));
+        Product product = new Product(
+                ProductID.of(command.getProductID()),
+                new Name(command.getName()),
+                new Price(command.getPrice()),
+                new Description(command.getDescription()),
+                new Location(command.getLocation()));
         return product.getUncommittedChanges().stream().map(eventRepository::saveEvent).collect(Collectors.toList());
     }
 }

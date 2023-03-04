@@ -8,10 +8,10 @@ import java.util.Date;
 
 public class CreateUserCommand extends Command {
     protected String userID;
-    protected UserName userName;
-    protected Password password;
+    protected String userName;
+    protected String password;
 
-    public CreateUserCommand(String userID, UserName userName, Password password) {
+    public CreateUserCommand(String userID, String userName, String password) {
         this.userID = userID;
         this.userName = userName;
         this.password = password;
@@ -25,19 +25,19 @@ public class CreateUserCommand extends Command {
         this.userID = userID;
     }
 
-    public UserName getUserName() {
+    public String getUserName() {
         return userName;
     }
 
-    public void setUserName(UserName userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public Password getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(Password password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 }
