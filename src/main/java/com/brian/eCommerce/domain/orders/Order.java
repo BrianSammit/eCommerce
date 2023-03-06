@@ -43,6 +43,6 @@ public class Order extends AggregateRoot<OrderID> {
         Objects.requireNonNull(price);
         Objects.requireNonNull(description);
         Objects.requireNonNull(location);
-        appendChange(new ProductAdded(id, name, price, description, location)).apply();
+        appendChange(new ProductAdded(id.value(), name.value(), price.value(), description.value(), location.value())).apply();
     }
 }

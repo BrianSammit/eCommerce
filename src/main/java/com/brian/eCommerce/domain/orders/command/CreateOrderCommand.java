@@ -8,14 +8,12 @@ import java.util.Date;
 public class CreateOrderCommand extends Command {
 
     private String orderID;
-//    private Date date;
     private String status;
     private String shippingAddress;
     private String userID;
 
     public CreateOrderCommand(String orderID, String status, String shippingAddress, String userID) {
         this.orderID = orderID;
-//        this.date = date;
         this.status = status;
         this.shippingAddress = shippingAddress;
         this.userID = userID;
@@ -28,14 +26,6 @@ public class CreateOrderCommand extends Command {
     public void setOrderID(String orderID) {
         this.orderID = orderID;
     }
-
-//    public Date getDate() {
-//        return date;
-//    }
-//
-//    public void setDate(Date date) {
-//        this.date = date;
-//    }
 
     public String getStatus() {
         return status;

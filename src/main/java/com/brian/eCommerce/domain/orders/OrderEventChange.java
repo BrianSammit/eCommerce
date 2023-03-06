@@ -18,8 +18,13 @@ public class OrderEventChange extends EventChange {
         });
 
         apply((ProductAdded event) -> {
-            Product product = new Product(event.getProductID(), event.getName(), event.getPrice(),
-                    event.getDescription(), event.getLocation());
+            Product product = new Product(
+                    ProductID.of(event.getProductID()),
+                    new Name(event.getName()),
+                    new Price(event.getPrice()),
+                    new Description(event.getDescription()),
+                    new Location(event.getLocation())
+            );
             order.products.add(product);
         });
     }

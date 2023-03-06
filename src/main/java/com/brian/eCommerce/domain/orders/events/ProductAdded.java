@@ -3,16 +3,18 @@ package com.brian.eCommerce.domain.orders.events;
 import com.brian.eCommerce.domain.values.*;
 import com.brian.eCommerce.generic.DomainEvent;
 
+import java.util.logging.LogRecord;
+
 public class ProductAdded extends DomainEvent {
 
-    protected ProductID productID;
-    protected Name name;
-    protected Price price;
-    protected Description description;
-    protected Location location;
+    protected String productID;
+    protected String name;
+    protected Float price;
+    protected String description;
+    protected String location;
 
-    public ProductAdded(ProductID productID, Name name, Price price, Description description,
-                        Location location) {
+    public ProductAdded(String productID, String name, Float price, String description,
+                        String location) {
         super("eCommerce.productAdded");
         this.productID = productID;
         this.name = name;
@@ -21,23 +23,23 @@ public class ProductAdded extends DomainEvent {
         this.location = location;
     }
 
-    public ProductID getProductID() {
+    public String getProductID() {
         return productID;
     }
 
-    public Name getName() {
+    public String getName() {
         return name;
     }
 
-    public Price getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public Description getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public Location getLocation() {
+    public String getLocation() {
         return location;
     }
 }

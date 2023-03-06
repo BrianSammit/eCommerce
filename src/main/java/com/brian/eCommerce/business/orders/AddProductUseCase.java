@@ -19,7 +19,7 @@ public class AddProductUseCase implements UseCaseForCommand<AddProductCommand> {
 
     @Override
     public List<DomainEvent> apply(AddProductCommand command) {
-        List<DomainEvent> orderEvent = eventRepository.findByAggregatedRootId(command.getProductID());
+        List<DomainEvent> orderEvent = eventRepository.findByAggregatedRootId(command.getOrderID());
         Order order = Order.from(OrderID.of(command.getOrderID()), orderEvent);
         order.addProduct(ProductID.of(command.getProductID()),
                 new Name(command.getName()),
