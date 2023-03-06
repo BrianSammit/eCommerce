@@ -11,7 +11,7 @@ public class CreateProductCommand extends Command {
     private  String location;
 
     public CreateProductCommand(String productID, String name, Float price,
-                                Boolean inStock, String description, String publisher, String location) {
+                                 String description, String location) {
         this.productID = productID;
         this.name = name;
         this.price = price;

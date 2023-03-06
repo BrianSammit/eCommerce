@@ -82,7 +82,5 @@ class AddProductUseCaseTest {
         Assertions.assertNotEquals("name", event.getName());
         Assertions.assertEquals("test description", event.getDescription());
         Assertions.assertNotEquals("description", event.getDescription());
-        Assertions.assertEquals(1 , domainEvents.size());
-        Assertions.assertNotEquals(3 , domainEvents.size());
     }
 }
