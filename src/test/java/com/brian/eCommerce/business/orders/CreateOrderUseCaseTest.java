@@ -54,6 +54,9 @@ class CreateOrderUseCaseTest {
         List<DomainEvent> domainEvents = createOrderUseCase.apply(createOrderCommand);
 
         Assertions.assertEquals(1, domainEvents.size());
+        Assertions.assertNotEquals(2, domainEvents.size());
+        Assertions.assertEquals("testID", domainEvents.get(0).aggregateRootId());
+        Assertions.assertNotEquals("test1", domainEvents.get(0).aggregateRootId());
 
     }
 }
